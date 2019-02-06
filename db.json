@@ -10,7 +10,7 @@
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 20
     },
     {
       "id": 3,
@@ -46,7 +46,19 @@
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": -2
+      "likes": 2
+    },
+    {
+      "name": "red ranger",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/718vNITllpL._SL1500_.jpg",
+      "likes": 32,
+      "id": 15
+    },
+    {
+      "name": "some toy",
+      "image": "adsfsad",
+      "likes": 34,
+      "id": 16
     }
   ]
 }
