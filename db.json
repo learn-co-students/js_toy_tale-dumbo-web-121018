@@ -47,6 +47,12 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Stretch Armstrong",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_ce083212-f54c-41dd-8768-c3737e3f2b2b?wid=488&hei=488&fmt=pjpeg",
+      "likes": 4,
+      "id": 9
     }
   ]
 }
