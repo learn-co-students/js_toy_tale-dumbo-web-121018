@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 15
+      "likes": 5
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 12
+      "likes": 8
     },
     {
       "id": 3,
@@ -49,16 +49,22 @@
       "likes": -2
     },
     {
-      "name": "Flappy the Elephant",
-      "image": "https://www.thegreenhead.com/imgs/flappy-elephant-animated-plush-sings-plays-peek-boo-1.gif",
-      "likes": 18,
+      "name": "ellie",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51-LsTAHAPL.jpg",
+      "likes": 0,
       "id": 9
     },
     {
-      "name": "Panda",
-      "image": "http://www.grabadeal.in/image/cache/catalog/Panda/P13-800x800.jpg",
-      "likes": 7,
+      "name": "Rico the Robot",
+      "image": "https://www.robotshop.com/community/forum/uploads/default/original/2X/5/5da4a04cefe387918d1b98f2e231e67366f7b706.jpeg",
+      "likes": 0,
       "id": 10
+    },
+    {
+      "name": "fine apple",
+      "image": "https://noodoll.com/wp-content/uploads/2017/03/T99647-Riceananas-front.jpg",
+      "likes": 0,
+      "id": 11
     }
   ]
 }
