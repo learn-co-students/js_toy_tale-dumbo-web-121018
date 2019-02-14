@@ -1,9 +1,15 @@
-// document.addEventListener("DOMContentLoaded", () => {
-//   console.log("yep")
+// document.addEventListener("DOMContentLoaded", (event) => {
+//   console.log("working")
 // })
 
 const addBtn = document.querySelector('#new-toy-btn')
 const toyForm = document.querySelector('.container')
+let toyURL =  "http://localhost:3000/toys"
+let toyCollection = document.querySelector("#toy-collection")
+let submitToy = document.querySelector("#submit-toy")
+let likeButton = document.querySelector(".like-btn")
+
+
 
 let addToy = false
 
@@ -18,59 +24,49 @@ addBtn.addEventListener('click', () => {
   }
 })
 
-
-const toysURL = `http://localhost:3000/toys`
-let toyCollection = document.querySelector("#toy-collection")
-
-
-fetch(toysURL)
+fetch(toyURL)
 .then(res => res.json())
 // .then(console.log)
-.then(toys => {
-  toys.forEach(displayToy)
-})
+.then(toys => toys.forEach(displayToy))
 
 function displayToy(toy) {
   // console.log(toy)
-  toyCollection.innerHTML += `
-    <div id="card-${toy.id}" class="card">
-      <h2>${toy.name}</h2>
-      <img src="${toy.image}" class="toy-avatar" />
-      <p data-id=${toy.id}>${toy.likes} likes</p>
-      <button data-id=${toy.id} id="toy-likes" class="like-btn">Like <3</button>
-    </div>
-    `
+  toyCollection.innerHTML +=
+  `
+  <div class="card">
+    <h2>${toy.name}</h2>
+    <img src="${toy.image}" class="toy-avatar" />
+    <p id="like-${toy.id}">${toy.likes}</p>
+    <button data-id="${toy.id}" class="like-btn">like</button>
+  </div>`
+
 }
 
 document.addEventListener("click", (e) => {
   e.preventDefault()
-  // console.log(e.target.id)
-  // console.log(e.target)
-  if (e.target.id === "create-toy-btn"){
-    // console.log("hi")
+  // console.log("hey")
+  if(e.target.id === "submit-toy"){
+    // console.log("submit")
     createToy(e)
   }
-  else if(e.target.className === "like-btn")
-  // console.log("hi")
-    updateLike(e)
+  else if(e.target.className === "like-btn"){
+    // console.log("liked")
+    likeToy(e)
+  }
+
 })
 
-function createToy(e) {
-  // console.log(e.target)
-  let nameInput = document.querySelector("#name-input").value
-  // console.log(nameInput.value)
-  let imageInput = document.querySelector("#image-input").value
-  // console.log(imageInput.value)
-  // console.log(nameInput)
-  // console.log(imageInput)
 
-  fetch(toysURL, {
+function createToy(e) {
+  let nameInput = document.querySelector("#name-input").value
+  let imageInput = document.querySelector("#image-input").value
+  fetch(toyURL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      Accept: "application/json"
     },
-    body: JSON.stringify({
+    body: JSON.stringify ({
       name: nameInput,
       image: imageInput,
       likes: 0
@@ -80,35 +76,29 @@ function createToy(e) {
   .then(displayToy)
 }
 
-function updateLike(e) {
-  let id = (e.target.dataset.id)
+function likeToy(e) {
+  // console.log(e.target.dataset.id)
+  let id = e.target.dataset.id
   // console.log(id)
-  let p = document.querySelector(`div #card-${id} p`)
-  let likeNumber = p.innerText
-  // console.log(likeNumber)
-  let updatedNumber = parseInt(likeNumber) + 1
-  // console.log(updatedNumber)
-  likeNumber = updatedNumber
-  // console.log(likeNumber)
-
-  // p.innerText = `${likeNumber} likes`
-
-
-  fetch(`${toysURL}/${id}`, {
+  // let likeCount = document.querySelector(`p#like-${id}`)
+  let likes = parseInt(document.querySelector(`p#like-${id}`).innerText)
+  likes = likes + 1
+  // likeCount.innerText = likes
+  // document.querySelector(`p#like-${id}`).innerText = likes
+  // console.log(likes)
+  fetch(`${toyURL}/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json"
+      Accept: "application/json"
     },
     body: JSON.stringify({
-      likes: likeNumber
+      likes: likes
     })
   })
   .then(res => res.json())
-  .then(p.innerText = `${likeNumber} likes`)
-
-
-
-
+  .then(toy => {
+  document.querySelector(`p#like-${id}`).innerText = toy.likes
+  })
 
 }
