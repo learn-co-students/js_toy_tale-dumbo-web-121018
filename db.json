@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 11
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 20
     },
     {
       "id": 3,
@@ -46,7 +46,25 @@
       "id": 8,
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
-      "likes": -2
+      "likes": 7
+    },
+    {
+      "name": "Mr. Spell",
+      "image": "https://vignette.wikia.nocookie.net/pixar/images/f/f8/MR.spellyouewelxone.jpg/revision/latest?cb=20111206193834",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://vignette.wikia.nocookie.net/heroes-and-villians/images/a/a7/2842746-wheezy.png/revision/latest?cb=20171024033738",
+      "likes": 4,
+      "id": 10
+    },
+    {
+      "name": "Wheezy",
+      "image": "https://vignette.wikia.nocookie.net/heroes-and-villians/images/a/a7/2842746-wheezy.png/revision/latest?cb=20171024033738",
+      "likes": 6,
+      "id": 11
     }
   ]
 }
